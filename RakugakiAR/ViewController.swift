@@ -8,18 +8,26 @@
 
 import UIKit
 import RealityKit
+import VisionKit
 
-class ViewController: UIViewController {
+
+class ViewController: UIViewController, VNDocumentCameraViewControllerDelegate {
     
     @IBOutlet var arView: ARView!
+    
+    @IBAction func scanDocument(_ sender: Any) {
+        let documentCameraViewController = VNDocumentCameraViewController()
+        documentCameraViewController.delegate = self
+        self.present(documentCameraViewController, animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Load the "Box" scene from the "Experience" Reality File
-        let boxAnchor = try! Experience.loadBox()
+//        let boxAnchor = try! Experience.loadBox()
         
         // Add the box anchor to the scene
-        arView.scene.anchors.append(boxAnchor)
+//        arView.scene.anchors.append(boxAnchor)
     }
 }
