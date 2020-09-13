@@ -24,6 +24,9 @@ class ViewController: UIViewController, VNDocumentCameraViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        print("ASDKASDJAH")
+        
         // Load the "Box" scene from the "Experience" Reality File
 //        let boxAnchor = try! Experience.loadBox()
         
